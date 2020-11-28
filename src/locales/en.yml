@@ -1,5 +1,6 @@
 app:
-  name: Penguin Statistics
+  name: Widget
+  vendor: Penguin Statistics
 
 settings:
   _name: Settings
@@ -13,7 +14,48 @@ source: Source (GitHub)
 errors:
   _sorry: We appologize the inconvenience, but...
   _prefix: An error has occurred when loading the widget
-  _reason: "\"{error}\" has caused this error"
+  _reason: "\"{error}\" has identified as cause"
   _reported: Error has been automatically reported to Penguin Statistics
-  _unknown: Unknown Error
-  type: Unknown Record Type
+  Unknown: Unrecognized Record
+  TooManyFailures: "Can't fetch {details} after multiple attempts"
+  InvalidServer: Invalid Server
+  CantMarshal: Failed to marshal record dependencies
+  FetchData: Failed to retrieve cache
+
+meta:
+  separator: ", "
+  time:
+    minute: "{m}m"
+    second: "{s}s"
+
+title:
+  stage: "Statistics for Stage {stageName}"
+  item: "Statistics for Item {itemName}"
+  exact: "Statistics for {itemName} in {stageName}"
+
+zone:
+  types:
+    MAINLINE: Mainline
+    WEEKLY: Supplies
+    ACTIVITY: Event
+
+table:
+  scroll: Scroll to view details
+  headers:
+    zoneName: Zone
+    stage: Stage
+    apCost: Sanity
+    item: Item
+    times: Samples
+    quantity: Loots
+    percentage: Percentage
+    apPPR: Sanity Required Per Item
+    clearTime: Shortest Clear Time
+    itemPerTime: Time Required Per Item
+    timeRange: Time Range
+  timeRange:
+    inBetween: "{0} to {1}"
+    toPresent: "{date} to Present"
+    endsAt: Before {date}
+    unknown: Unknown
+    notSelected: "(not selected)"

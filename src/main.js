@@ -7,6 +7,8 @@ import vuetify from './plugins/vuetify'
 import '@/styles/base.css'
 import '@/styles/theme.scss'
 import DataTableError from '@/components/table/DataTableError'
+import DataTableItem from '@/components/table/DataTableItem'
+import DataTableStage from '@/components/table/DataTableStage'
 
 Vue.component('DataTableAuto', {
   functional: true,
@@ -20,13 +22,15 @@ Vue.component('DataTableAuto', {
     let component
     let additionalProps = {}
     if (ctx.props.options.type === 'item') {
-      component = require(/* webpackChunkName: 'dataTableItem' */ '@/components/table/DataTableItem')
-    } else if (ctx.props.options.type === 'stage') {
-      component = require(/* webpackChunkName: 'dataTableStage' */ '@/components/table/DataTableStage')
+      component = DataTableItem
+    } else if (ctx.props.options.type === 'stage' || ctx.props.options.type === 'exact') {
+      component = DataTableStage
     } else {
       component = DataTableError
       additionalProps = {
-        error: 'type'
+        errors: ctx.props.options.errors || [{
+          type: 'Unknown'
+        }]
       }
     }
 

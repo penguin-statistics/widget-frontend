@@ -107,3 +107,10 @@ main {
     background: rgba(255, 255, 255, .18);
   }
 }
+.data-table table {
+  position: relative;
+}
+.data-table thead tr th {
+  position: sticky;
+  top: 0;
+}

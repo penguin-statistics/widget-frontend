@@ -9,11 +9,10 @@
     height="40"
     penguin:element="header"
   >
-    <h1>固源岩</h1>
-    <h2>掉落统计</h2>
+    <h1>{{ meta.title }}</h1>
     <v-spacer />
     <a
-      href="https://penguin-stats.io"
+      :href="meta.url"
       target="_blank"
       rel="noopener noreferrer"
     >
@@ -22,7 +21,7 @@
         alt="logo"
       >
       <span class="name hidden-xs-only">
-        {{ $t('app.name') }}
+        {{ $t('app.vendor') }}
       </span>
       <v-icon class="open-icon ml-1 transition-all">
         {{ mdiOpenInNew }}
@@ -33,11 +32,17 @@
 
 <script>
 import { mdiOpenInNew } from '@mdi/js'
+import PenguinData from '@/utils/penguin'
 export default {
   name: 'Header',
   data () {
     return {
       mdiOpenInNew
+    }
+  },
+  computed: {
+    meta () {
+      return PenguinData.meta()
     }
   }
 }

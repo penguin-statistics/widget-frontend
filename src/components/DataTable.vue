@@ -1,12 +1,59 @@
 <template>
-  <DataTableAuto :options="{}" />
+  <div class="overflow-x-auto elevation-2 border-radius-1 full-width">
+    <div
+      class="d-flex justify-center mt-2 mb-1 hidden-md-and-up"
+    >
+      <v-chip
+        label
+        class="d-flex align-center flex-row caption text--text"
+      >
+        <v-icon
+          :size="20"
+          color="text"
+          class="mr-1"
+        >
+          {{ mdiChevronDoubleLeft }}
+        </v-icon>
+
+        <span class="text--text">{{ $t('table.scroll') }}</span>
+
+        <v-icon
+          :size="20"
+          color="text"
+          class="ml-1"
+        >
+          {{ mdiChevronDoubleRight }}
+        </v-icon>
+      </v-chip>
+    </div>
+
+    <DataTableAuto :options="tableOptions" />
+  </div>
 </template>
 
 <script>
-const itemData = [{ stageId: 'randomMaterialRune_0', itemId: '30013', quantity: 377, times: 2996, start: 1585598400000 }, { stageId: 'randomMaterialRune_1', itemId: '30013', quantity: 1026, times: 8922, start: 1592251200000 }, { stageId: 'randomMaterialRune_2', itemId: '30013', quantity: 599, times: 5450, start: 1597089600000 }, { stageId: 'main_04-01', itemId: '30013', quantity: 9, times: 165, start: 1577174400000, end: 1605384000000 }, { stageId: 'main_04-04', itemId: '30013', quantity: 447, times: 22782, start: 1577174400000 }, { stageId: 'main_04-03', itemId: '30013', quantity: 1, times: 37, start: 1577174400000, end: 1605384000000 }, { stageId: 'main_04-06', itemId: '30013', quantity: 7091, times: 15847, start: 1577174400000 }, { stageId: 'main_04-07', itemId: '30013', quantity: 516, times: 25515, start: 1577174400000 }, { stageId: 'main_08-14', itemId: '30013', quantity: 10, times: 647, start: 1604217600000 }, { stageId: 'main_08-13', itemId: '30013', quantity: 155, times: 4563, start: 1604217600000 }, { stageId: 'randomMaterial_3', itemId: '30013', quantity: 659, times: 30185, start: 1589529600000 }, { stageId: 'randomMaterial_4', itemId: '30013', quantity: 289, times: 14119, start: 1604217600000 }, { stageId: 'randomMaterial_1', itemId: '30013', quantity: 235, times: 14522, start: 1577174400000 }, { stageId: 'randomMaterial_2', itemId: '30013', quantity: 217, times: 12952, start: 1581105600000 }, { stageId: 'main_05-02', itemId: '30013', quantity: 11, times: 667, start: 1577174400000 }, { stageId: 'main_05-05', itemId: '30013', quantity: 69, times: 3337, start: 1577174400000 }, { stageId: 'main_05-01', itemId: '30013', quantity: 248, times: 490, start: 1577174400000 }, { stageId: 'main_05-09', itemId: '30013', quantity: 4, times: 170, start: 1577174400000 }, { stageId: 'sub_04-4-1', itemId: '30013', quantity: 54, times: 2462, start: 1577174400000 }, { stageId: 'main_04-10', itemId: '30013', quantity: 432, times: 12564, start: 1577174400000 }, { stageId: 'main_06-12', itemId: '30013', quantity: 27, times: 1068, start: 1577174400000 }, { stageId: 'sub_05-4-2', itemId: '30013', quantity: 70, times: 3535, start: 1577174400000 }, { stageId: 'sub_07-1-1', itemId: '30013', quantity: 3, times: 75, start: 1588320000000, end: 1605384000000 }, { stageId: 'main_06-05', itemId: '30013', quantity: 7949, times: 13231, start: 1577174400000 }, { stageId: 'main_06-03', itemId: '30013', quantity: 16, times: 540, start: 1577174400000 }, { stageId: 'main_08-06', itemId: '30013', times: 22, start: 1604217600000 }, { stageId: 'main_08-03', itemId: '30013', quantity: 372, times: 877, start: 1604217600000 }, { stageId: 'main_08-01', itemId: '30013', quantity: 3, times: 94, start: 1604217600000 }, { stageId: 'main_07-05', itemId: '30013', quantity: 4419, times: 7304, start: 1588320000000 }, { stageId: 'main_07-01', itemId: '30013', quantity: 1649, times: 3833, start: 1588320000000 }, { stageId: 'main_07-11', itemId: '30013', quantity: 1, times: 63, start: 1588320000000, end: 1605384000000 }, { stageId: 'main_02-04', itemId: '30013', quantity: 3093, times: 7323, start: 1556676000000 }]
+import { mdiChevronDoubleLeft, mdiChevronDoubleRight } from '@mdi/js'
+import PenguinData from '@/utils/penguin'
+import FactTable from '@/components/fact-table/FactTable'
+import FactTableItem from '@/components/fact-table/FactTableItem'
+import ItemIcon from '@/components/ItemIcon'
 
 export default {
-  name: 'DataTable'
+  name: 'DataTable',
+  components: { ItemIcon, FactTableItem, FactTable },
+  data () {
+    return {
+      mdiChevronDoubleLeft,
+      mdiChevronDoubleRight
+    }
+  },
+  computed: {
+    tableOptions () {
+      const errors = PenguinData.all().errors
+      if (errors) return { errors }
+      return PenguinData.matrix.data()
+    }
+  }
 }
 </script>
 

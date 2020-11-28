@@ -23,7 +23,7 @@
         >
           {{ mdiAlertCircle }}
         </v-icon>
-        {{ $t('errors._reason', {error: $t('errors.' + computedErrorKey)}) }}
+        {{ $t('errors._reason', {error: errorMessage}) }}
       </span>
       <span class="grey--text caption mt-0">
         {{ $t('errors._reported') }}
@@ -37,8 +37,8 @@ import { mdiAlertCircle } from '@mdi/js'
 export default {
   name: 'DataTableError',
   props: {
-    error: {
-      type: String,
+    errors: {
+      type: Array,
       required: true
     }
   },
@@ -48,8 +48,12 @@ export default {
     }
   },
   computed: {
-    computedErrorKey () {
-      return this.error || 'unknown'
+    errorMessage () {
+      const messages = []
+      for (const error of this.errors) {
+        messages.push(this.$t('errors.' + error.type, error))
+      }
+      return messages.join(this.$t('meta.separator'))
     }
   }
 }

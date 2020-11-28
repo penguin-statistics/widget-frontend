@@ -1,5 +1,6 @@
 app:
-  name: 企鹅物流数据统计
+  name: 小组件
+  vendor: 企鹅物流数据统计
 
 settings:
   _name: 设置
@@ -13,7 +14,48 @@ source: 源码 (GitHub)
 errors:
   _sorry: 向阁下带来不便深表歉意，但
   _prefix: 加载小组件时发生了问题
-  _reason: "此次问题归因于错误 “{error}”"
+  _reason: "问题诱因识别为 “{error}”"
   _reported: 已自动向企鹅物流数据统计云端报告此次错误
-  _unknown: 未知错误
-  type: 未知的数据格式
+  Unknown: 未知的数据格式
+  TooManyFailures: "屡次无法成功拉取数据项 {details}"
+  InvalidServer: 不合法的服务器
+  CantMarshal: 数据依赖处理失败
+  FetchData: 数据缓存读出失败
+
+meta:
+  separator: "、"
+  time:
+    minute: "{m}分 "
+    second: "{s}秒"
+
+title:
+  stage: "掉落统计 / {stageName} "
+  item: "掉落统计 / {itemName}"
+  exact: "掉落统计 / {stageName} 的 {itemName} "
+
+zone:
+  types:
+    MAINLINE: 主线
+    WEEKLY: 物资筹备
+    ACTIVITY: 限时活动
+
+table:
+  scroll: 左右滑动查看数据
+  headers:
+    zoneName: 章节
+    stage: 作战
+    apCost: 理智
+    item: 物品
+    times: 样本数
+    quantity: 掉落数
+    percentage: 百分比
+    apPPR: 单件估算理智
+    clearTime: 最短通关用时
+    itemPerTime: 单件估算用时
+    timeRange: 统计区间
+  timeRange:
+    inBetween: "{0} ~ {1}"
+    toPresent: "{date} 至今"
+    endsAt: "{date} 之前"
+    unknown: 未知
+    notSelected: "（暂未选择）"

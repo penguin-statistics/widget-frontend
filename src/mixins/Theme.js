@@ -6,12 +6,14 @@ export default {
     theme: ['onThemeChange']
   },
   computed: {
-    ...mapGetters('settings', ['theme'])
+    ...mapGetters('settings', ['theme']),
+    dark () {
+      return this.theme === 'dark'
+    }
   },
   methods: {
     themeToggle (isDark) {
       const windowsIndicator = environment.isWindows ? 'platform--windows' : 'platform--not-windows'
-      console.log(isDark)
       this.$vuetify.theme.dark = isDark
       const cl = document.documentElement.classList
       cl.add(windowsIndicator)
