@@ -1,0 +1,19 @@
+app:
+  name: 企鹅物流数据统计
+
+settings:
+  _name: 设置
+  theme:
+    light: 亮色主题
+    dark: 暗色主题
+
+copyright: 此小组件数据由企鹅物流数据统计使用知识共享 署名-非商业性使用 4.0 国际 许可协议进行分发
+source: 源码 (GitHub)
+
+errors:
+  _sorry: 向阁下带来不便深表歉意，但
+  _prefix: 加载小组件时发生了问题
+  _reason: "此次问题归因于错误 “{error}”"
+  _reported: 已自动向企鹅物流数据统计云端报告此次错误
+  _unknown: 未知错误
+  type: 未知的数据格式

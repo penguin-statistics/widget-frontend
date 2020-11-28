@@ -1,0 +1,19 @@
+app:
+  name: ペンギン急便データ統計処理部門
+
+settings:
+  _name: 設定
+  theme:
+    light: ライトモード
+    dark: ダークモード
+
+copyright: Widget distributed by Penguin Statistics under CC BY-NC 4.0 International License
+source: Source (GitHub)
+
+errors:
+  _sorry: We appologize the inconvenience, but...
+  _prefix: An error has occurred when loading the widget
+  _reason: "\"{error}\" has caused this error"
+  _reported: Error has been automatically reported to Penguin Statistics
+  _unknown: Unknown Error
+  type: Unknown Record Type

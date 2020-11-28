@@ -1,28 +1,67 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <v-app>
+    <Header />
+
+    <v-main>
+      <v-container
+        class="fill-height"
+        penguin:element="content"
+      >
+        <DataTable />
+      </v-container>
+    </v-main>
+
+    <v-footer
+      outlined
+      style="background: transparent; border-width: 1px 0 0 0"
+      class="d-flex flex-column"
+      penguin:element="footer"
+    >
+      <Settings class="full-width" />
+      <v-divider
+        class="mt-2 mb-1 full-width hidden-sm-and-up"
+      />
+      <div
+        class="d-flex flex-column justify-center align-center caption my-2"
+      >
+        <span class="mb-1">
+          {{ $t('app.name') }} {{ year }} |
+          <a
+            href=""
+            target="_blank"
+            style="text-decoration: none"
+          >
+            {{ $t('source') }}
+          </a>
+        </span>
+        <span
+          class="grey--text"
+          style="font-size: 8px; line-height: 1rem"
+        >
+          {{ $t('copyright') }}
+        </span>
+      </div>
+    </v-footer>
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import Header from '@/components/Header'
+import Settings from '@/components/Settings'
+import PrefillEnvironment from '@/mixins/hooks/PrefillEnvironment'
+import DataTable from '@/components/DataTable'
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    DataTable,
+    Settings,
+    Header
+  },
+  mixins: [PrefillEnvironment],
+  data () {
+    return {
+      year: new Date().getFullYear()
+    }
   }
 }
 </script>
-
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>

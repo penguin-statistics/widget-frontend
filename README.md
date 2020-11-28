@@ -1,4 +1,4 @@
-# penguin-stats-embed-vuetify
+# penguin-stats-widget
 
 ## Project setup
 ```
