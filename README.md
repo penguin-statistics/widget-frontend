@@ -4,6 +4,8 @@
 
 # Penguin Statistics - Widget `frontend`
 [![Status](https://img.shields.io/badge/status-development-red)](#readme)
+[![Language](https://img.shields.io/badge/using-Vue.js-%234FC08D?logo=vue.js)](#readme)
+[![Language](https://img.shields.io/badge/using-Vuetify-%231867C0?logo=vuetify)](#readme)
 [![License](https://img.shields.io/github/license/penguin-statistics/widget-frontend)](https://github.com/penguin-statistics/widget-backend/blob/main/LICENSE)
 [![Last Commit](https://img.shields.io/github/last-commit/penguin-statistics/widget-backend)](https://github.com/penguin-statistics/widget-backend/commits/main)
 
