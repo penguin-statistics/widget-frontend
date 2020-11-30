@@ -25,7 +25,7 @@
         class="d-flex flex-column justify-center align-center caption my-2"
       >
         <span class="mb-1">
-          {{ $t('app.vendor') }} {{ year }} |
+          {{ $t('app.vendor') }} {{ $t('app.name') }} {{ year }} |
           <a
             href=""
             target="_blank"

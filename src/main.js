@@ -10,6 +10,13 @@ import DataTableError from '@/components/table/DataTableError'
 import DataTableItem from '@/components/table/DataTableItem'
 import DataTableStage from '@/components/table/DataTableStage'
 
+import VueGtag from 'vue-gtag'
+
+Vue.use(VueGtag, {
+  config: { id: 'G-4VJR7KRK8D' },
+  bootstrap: false
+})
+
 Vue.component('DataTableAuto', {
   functional: true,
   props: {

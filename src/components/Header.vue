@@ -80,7 +80,7 @@ export default {
   display: flex;
   align-items: center;
   padding: 0 8px;
-  transition: all 175ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 225ms cubic-bezier(0.165, 0.84, 0.44, 1);
 
   outline: 0 dashed #ad7bcf;
   outline-offset: 0;
@@ -93,11 +93,12 @@ export default {
 }
 
 .header a:hover {
-  background: rgba(0, 0, 0, .18)
+  background: rgba(0, 0, 0, .18);
+  box-shadow: 0 2px 8px rgba(18, 18, 18, .6);
 }
 .header a:active {
-  background: rgba(0, 0, 0, .3);
-  outline-width: 1px
+  background: rgba(0, 0, 0, .4);
+  box-shadow: 0 0 2px rgba(18, 18, 18, .3);
 }
 
 .header .open-icon {
