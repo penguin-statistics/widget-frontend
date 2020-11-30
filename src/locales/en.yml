@@ -22,6 +22,7 @@ errors:
   CantMarshal: Failed to marshal record dependencies
   FetchData: Failed to retrieve cache
   PageNotFound: Page Not Found
+  NotFound: Record Not Found with parameter provided
 
 meta:
   separator: ", "

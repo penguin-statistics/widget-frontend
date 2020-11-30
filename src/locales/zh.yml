@@ -22,6 +22,7 @@ errors:
   CantMarshal: 数据依赖处理失败
   FetchData: 数据缓存读出失败
   PageNotFound: 请求的页面路径不存在
+  NotFound: 未找到所查询的数据项
 
 meta:
   separator: "、"

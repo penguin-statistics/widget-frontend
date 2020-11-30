@@ -27,7 +27,7 @@
         <span class="mb-1">
           {{ $t('app.vendor') }} {{ $t('app.name') }} {{ year }} |
           <a
-            href=""
+            href="https://github.com/penguin-statistics/widget-frontend"
             target="_blank"
             style="text-decoration: none"
           >
