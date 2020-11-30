@@ -21,6 +21,7 @@ errors:
   InvalidServer: Invalid Server
   CantMarshal: Failed to marshal record dependencies
   FetchData: Failed to retrieve cache
+  PageNotFound: Page Not Found
 
 meta:
   separator: ", "

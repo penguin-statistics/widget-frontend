@@ -1,5 +1,7 @@
 module.exports = {
   lintOnSave: false,
+  assetsDir: '_widget',
+
   pluginOptions: {
     i18n: {
       locale: 'en',
