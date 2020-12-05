@@ -1,5 +1,5 @@
 <template>
-  <div class="elevation-2 border-radius-1 pb-2 overflow-x-auto">
+  <div class="elevation-2 border-radius-1 overflow-x-auto">
     <MoreDataIndicator />
 
     <v-data-table
@@ -13,7 +13,7 @@
       sort-by="percentage"
       sort-desc
 
-      class="full-width data-table"
+      class="full-width data-table pb-2"
     >
       <template #item.zoneName="{ item }">
         <ZoneName :zone="item.zone" />

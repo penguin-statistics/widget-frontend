@@ -10,7 +10,7 @@
     :class="furniturePadding"
 
     class="deep-orange item-icon--special white--text"
-    :size="config.iconSize"
+    :size="config.iconSize * 0.9"
   >
     {{ mdiLamp }}
   </v-icon>
@@ -19,7 +19,7 @@
     :class="furniturePadding"
 
     class="blue item-icon--special white--text"
-    :size="config.iconSize"
+    :size="config.iconSize * 0.9"
   >
     {{ mdiTreasureChest }}
   </v-icon>
@@ -115,9 +115,11 @@ export default {
   width: 60px;
   display: inline-block;
   overflow: hidden;
+  margin-top: 6px
 }
 
 .item-icon--special {
   border-radius: 50%;
+  margin-left: 2px;
 }
 </style>

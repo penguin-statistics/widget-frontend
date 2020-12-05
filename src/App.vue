@@ -3,10 +3,8 @@
     <Header />
 
     <v-main class="fill-content-height d-flex align-center">
-      <v-container
-        penguin:element="content"
-      >
-        <DataTable />
+      <v-container>
+        <DataTable penguin:element="content" />
       </v-container>
     </v-main>
 
