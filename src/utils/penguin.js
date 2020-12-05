@@ -155,10 +155,24 @@ PenguinData.meta = function () {
   }
 }
 
+PenguinData.request = function () {
+  return PenguinData.all().request || {}
+}
+
 PenguinData.mirror = function () {
-  return {
-    site: 'https://penguin-stats.io',
-    cdn: 'https://penguin.upyun.galvincdn.com'
+  const mirror = PenguinData.request().mirror
+  switch (mirror) {
+    case 'io':
+      return {
+        site: 'https://penguin-stats.io',
+        cdn: 'https://penguin-stats.s3.amazonaws.com'
+      }
+    case 'cn':
+    default:
+      return {
+        site: 'https://penguin-stats.cn',
+        cdn: 'https://penguin.upyun.galvincdn.com'
+      }
   }
 }
 
