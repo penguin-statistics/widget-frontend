@@ -13,6 +13,7 @@ source: Source (GitHub)
 version: "Version {app} (build {git} at {time})"
 
 errors:
+  _title: Unable to Load Widget
   _sorry: We appologize the inconvenience, but...
   _prefix: An error has occurred when loading the widget
   _reason: "\"{error}\" has identified as cause"

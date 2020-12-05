@@ -4,7 +4,10 @@
 
     <v-main class="fill-content-height d-flex align-center">
       <v-container>
-        <DataTable penguin:element="content" />
+        <DataTable
+          penguin:element="content"
+          style="height: fit-content"
+        />
       </v-container>
     </v-main>
 

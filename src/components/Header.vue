@@ -4,14 +4,23 @@
     color="primary"
     dark
     dense
-    class="d-flex flex-row header px-4 pr-2 transition-all"
+    class="d-flex flex-row justify-center header px-4 pr-2 transition-all"
     collapse-on-scroll
     height="40"
     penguin:element="header"
   >
-    <h1 class="hidden-on-collapsed transition-all overflow-hidden text-no-wrap">
+    <h1
+      class="hidden-on-collapsed transition-all overflow-hidden text-no-wrap"
+      :class="{'error error-heading darken-1': meta.error}"
+    >
       {{ meta.title }}
     </h1>
+    <ItemIcon
+      v-if="item"
+      :item="item"
+      :ratio=".4"
+      class="ml-1 hidden-on-collapsed hidden-on-collapsed--secondary transition-all"
+    />
     <v-spacer />
     <a
       :href="meta.url"
@@ -35,8 +44,10 @@
 <script>
 import { mdiOpenInNew } from '@mdi/js'
 import PenguinData from '@/utils/penguin'
+import ItemIcon from '@/components/ItemIcon'
 export default {
   name: 'Header',
+  components: { ItemIcon },
   data () {
     return {
       mdiOpenInNew,
@@ -46,6 +57,11 @@ export default {
   computed: {
     meta () {
       return PenguinData.meta()
+    },
+    item () {
+      const item = this.meta.item
+      if (!item) return null
+      return item
     }
   }
 }
@@ -121,14 +137,25 @@ export default {
   padding: 0;
 }
 .hidden-on-collapsed {
+  position: relative;
   opacity: 1;
   transform: translateX(0);
 }
 .v-toolbar--collapsed .hidden-on-collapsed {
+  position: relative;
   opacity: 0;
   transform: translateX(-16px);
 }
+.v-toolbar--collapsed .hidden-on-collapsed--secondary {
+  transform: translateX(-24px) !important;
+}
 .v-toolbar--collapsed .d-none-on-collapsed {
   display: none;
+}
+.error-heading {
+  text-shadow: 0 0 5px rgba(0, 0, 0, .18);
+  padding: 4px 12px;
+  border-radius: 16px;
+  transform: skewX(-7deg);
 }
 </style>

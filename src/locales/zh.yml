@@ -13,6 +13,7 @@ source: 源码 (GitHub)
 version: 版本 {app}（{time} 的构建版本 {git}）
 
 errors:
+  _title: 加载小组件时发生了问题
   _sorry: 向阁下带来不便深表歉意，但
   _prefix: 加载小组件时发生了问题
   _reason: "问题诱因识别为 “{error}”"

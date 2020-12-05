@@ -19,6 +19,7 @@
         <div class="d-flex align-center">
           <div class="item-icon">
             <ItemIcon
+              fix-position
               :item="item.item"
               :ratio=".6"
               class="mr-2"

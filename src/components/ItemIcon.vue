@@ -2,12 +2,13 @@
   <figure
     v-if="item.itemId !== 'furni' && item.spriteCoord"
     class="item-icon--sprite"
+    :class="fixPositionClasses"
     :alt="item.itemId"
     :style="{...style, ...sizeStyle}"
   />
   <v-icon
     v-else-if="item.itemId === 'furni'"
-    :class="furniturePadding"
+    :class="{...furniturePadding, ...fixPositionClasses}"
 
     class="deep-orange item-icon--special white--text"
     :size="config.iconSize * 0.9"
@@ -16,7 +17,7 @@
   </v-icon>
   <v-icon
     v-else
-    :class="furniturePadding"
+    :class="{...furniturePadding, ...fixPositionClasses}"
 
     class="blue item-icon--special white--text"
     :size="config.iconSize * 0.9"
@@ -42,6 +43,12 @@ export default {
       default () {
         return 1
       }
+    },
+    fixPosition: {
+      type: Boolean,
+      default () {
+        return false
+      }
     }
   },
   data () {
@@ -59,17 +66,22 @@ export default {
   },
   computed: {
     furniturePadding () {
+      let padding
       if (this.ratio <= 0.25) {
-        return ['pa-0']
+        padding = 'pa-0'
       } else if (this.ratio <= 0.5) {
-        return ['pa-1']
+        padding = 'pa-1'
       } else if (this.ratio <= 0.75) {
-        return ['pa-2']
+        padding = 'pa-2'
       } else if (this.ratio <= 1) {
-        return ['pa-4']
+        padding = 'pa-4'
       } else {
-        return ['pa-6']
+        padding = 'pa-6'
       }
+      return { [padding]: true }
+    },
+    fixPositionClasses () {
+      return { 'item-icon--fix-pos': this.fixPosition }
     },
     current () {
       return this.sprite
@@ -115,11 +127,14 @@ export default {
   width: 60px;
   display: inline-block;
   overflow: hidden;
+}
+.item-icon--fix-pos.item-icon--sprite {
   margin-top: 6px
 }
-
 .item-icon--special {
   border-radius: 50%;
+}
+.item-icon--fix-pos.item-icon--special {
   margin-left: 2px;
 }
 </style>

@@ -10,24 +10,29 @@
       style="max-width: 600px"
       rounded
     >
-      <span class="grey--text caption">
-        {{ $t('errors._sorry') }}
-      </span>
-      <span class="subtitle-1">
-        {{ $t('errors._prefix') }}
-      </span>
-      <span class="d-flex align-center mt-2 caption text-left">
-        <v-icon
-          small
-          class="mr-1"
-        >
-          {{ mdiAlertCircle }}
-        </v-icon>
-        {{ $t('errors._reason', {error: errorMessage}) }}
-      </span>
-      <span class="grey--text caption mt-0">
-        {{ $t('errors._reported') }}
-      </span>
+      <div
+        class="d-flex flex-column align-center justify-center"
+        style="z-index: 1"
+      >
+        <span class="grey--text caption">
+          {{ $t('errors._sorry') }}
+        </span>
+        <span class="subtitle-1">
+          {{ $t('errors._prefix') }}
+        </span>
+        <span class="d-flex align-center mt-2 caption text-left">
+          <v-icon
+            small
+            class="mr-1"
+          >
+            {{ mdiAlertCircle }}
+          </v-icon>
+          {{ $t('errors._reason', {error: errorMessage}) }}
+        </span>
+        <span class="grey--text caption mt-0">
+          {{ $t('errors._reported') }}
+        </span>
+      </div>
     </v-sheet>
   </div>
 </template>
