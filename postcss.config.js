@@ -1,7 +1,7 @@
-// module.exports = {
-//   plugins: [
-//     require('cssnano')({
-//       preset: 'advanced'
-//     })
-//   ]
-// }
+module.exports = {
+  plugins: [
+    require('cssnano')({
+      preset: 'default'
+    })
+  ]
+}

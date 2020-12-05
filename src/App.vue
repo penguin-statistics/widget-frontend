@@ -37,6 +37,12 @@
         >
           {{ $t('copyright') }}
         </span>
+        <span
+          class="grey--text"
+          style="font-size: 8px; line-height: 1rem"
+        >
+          {{ $t('version', version) }}
+        </span>
       </div>
     </v-footer>
   </v-app>
@@ -58,6 +64,15 @@ export default {
   data () {
     return {
       year: new Date().getFullYear()
+    }
+  },
+  computed: {
+    version () {
+      return {
+        app: 'v' + NPM_PACKAGE_VERSION,
+        git: GIT_COMMIT,
+        time: new Date(parseInt(BUILD_TIME) * 1000).toLocaleString()
+      }
     }
   }
 }

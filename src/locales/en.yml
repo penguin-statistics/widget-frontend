@@ -10,6 +10,7 @@ settings:
 
 copyright: Widget distributed by Penguin Statistics under CC BY-NC 4.0 International License
 source: Source (GitHub)
+version: "Version {app} (build {git} at {time})"
 
 errors:
   _sorry: We appologize the inconvenience, but...

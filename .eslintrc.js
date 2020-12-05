@@ -3,6 +3,11 @@ module.exports = {
   env: {
     node: true
   },
+  globals: {
+    NPM_PACKAGE_VERSION: true,
+    GIT_COMMIT: true,
+    BUILD_TIME: true
+  },
   extends: [
     'plugin:vue/recommended',
     'eslint:recommended',

@@ -10,6 +10,7 @@ settings:
 
 copyright: 此小组件数据由企鹅物流数据统计使用知识共享 署名-非商业性使用 4.0 国际 许可协议进行分发
 source: 源码 (GitHub)
+version: 版本 {app}（{time} 的构建版本 {git}）
 
 errors:
   _sorry: 向阁下带来不便深表歉意，但
