@@ -2,9 +2,8 @@
   <v-app>
     <Header />
 
-    <v-main>
+    <v-main class="fill-content-height d-flex align-center">
       <v-container
-        class="fill-height"
         penguin:element="content"
       >
         <DataTable />

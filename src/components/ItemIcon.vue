@@ -50,17 +50,10 @@ export default {
       mdiTreasureChest,
 
       previousIconSize: 60,
-      resolutions: {
-        high: {
-          iconSize: 183,
-          dimensions: [1098, 2562],
-          url: '/sprite/sprite.202011011235.png'
-        },
-        low: {
-          iconSize: 183 / 2,
-          dimensions: [1098 / 2, 2562 / 2],
-          url: '/sprite/sprite.202011011235.small.png'
-        }
+      sprite: {
+        iconSize: 183 / 2,
+        dimensions: [1098 / 2, 2562 / 2],
+        url: '/sprite/sprite.202011011235.small.png'
       }
     }
   },
@@ -78,15 +71,8 @@ export default {
         return ['pa-6']
       }
     },
-    lowResolution () {
-      let lowResolution = true
-      if (window.matchMedia) {
-        if (window.devicePixelRatio >= 2 || window.matchMedia('(min-resolution: 192dpi)').matches) { lowResolution = false }
-      }
-      return lowResolution
-    },
     current () {
-      return this.resolutions[this.lowResolution ? 'low' : 'high']
+      return this.sprite
     },
     config () {
       const zoom = this.ratio * (this.previousIconSize / this.current.iconSize)

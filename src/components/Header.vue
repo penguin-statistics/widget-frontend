@@ -4,12 +4,14 @@
     color="primary"
     dark
     dense
-    class="d-flex flex-row header px-4 pr-2"
-    hide-on-scroll
+    class="d-flex flex-row header px-4 pr-2 transition-all"
+    collapse-on-scroll
     height="40"
     penguin:element="header"
   >
-    <h1>{{ meta.title }}</h1>
+    <h1 class="hidden-on-collapsed transition-all overflow-hidden text-no-wrap">
+      {{ meta.title }}
+    </h1>
     <v-spacer />
     <a
       :href="meta.url"
@@ -20,7 +22,7 @@
         src="https://penguin.upyun.galvincdn.com/logos/penguin_stats_logo.png"
         alt="logo"
       >
-      <span class="name hidden-xs-only">
+      <span class="name hidden-xs-only d-none-on-collapsed overflow-hidden text-no-wrap">
         {{ $t('app.vendor') }}
       </span>
       <v-icon class="open-icon ml-1 transition-all">
@@ -37,7 +39,8 @@ export default {
   name: 'Header',
   data () {
     return {
-      mdiOpenInNew
+      mdiOpenInNew,
+      collapsed: false
     }
   },
   computed: {
@@ -88,6 +91,10 @@ export default {
   height: 36px;
 }
 
+.v-toolbar--collapsed a {
+  border-bottom-right-radius: 12px !important;
+}
+
 .vuetify-theme--dark .header {
   outline-color: #c0b1d9 !important;
 }
@@ -102,17 +109,26 @@ export default {
 }
 
 .header .open-icon {
-  width: 0;
+  width: 16px;
   overflow: hidden;
-  transform: scale(0);
 }
 .header a:hover .open-icon {
-  width: 16px;
   transform: scale(1);
 }
 
 .header ::v-deep.v-toolbar__content {
   width: 100% !important;
   padding: 0;
+}
+.hidden-on-collapsed {
+  opacity: 1;
+  transform: translateX(0);
+}
+.v-toolbar--collapsed .hidden-on-collapsed {
+  opacity: 0;
+  transform: translateX(-16px);
+}
+.v-toolbar--collapsed .d-none-on-collapsed {
+  display: none;
 }
 </style>

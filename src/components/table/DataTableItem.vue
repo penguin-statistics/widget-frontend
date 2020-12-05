@@ -1,32 +1,36 @@
 <template>
-  <v-data-table
-    :items="items"
-    :headers="headers"
+  <div class="elevation-2 border-radius-1 pb-2 overflow-x-auto">
+    <MoreDataIndicator />
 
-    :mobile-breakpoint="-1"
-    :items-per-page="-1"
-    disable-pagination
-    hide-default-footer
-    sort-by="percentage"
-    sort-desc
+    <v-data-table
+      :items="items"
+      :headers="headers"
 
-    class="full-width data-table"
-  >
-    <template #item.zoneName="{ item }">
-      <ZoneName :zone="item.zone" />
-    </template>
-    <template #item.stage="{ item }">
-      <StageCode :code="item.stageCode" />
-    </template>
-    <template #item.stage.apCost="{ item }">
-      <span class="deep-orange--text font-weight-bold">
-        {{ item.stage.apCost }}
-      </span>
-    </template>
-    <template #item.percentage="{ item }">
-      {{ item.percentageText }}
-    </template>
-  </v-data-table>
+      :mobile-breakpoint="-1"
+      :items-per-page="-1"
+      disable-pagination
+      hide-default-footer
+      sort-by="percentage"
+      sort-desc
+
+      class="full-width data-table"
+    >
+      <template #item.zoneName="{ item }">
+        <ZoneName :zone="item.zone" />
+      </template>
+      <template #item.stage="{ item }">
+        <StageCode :code="item.stageCode" />
+      </template>
+      <template #item.stage.apCost="{ item }">
+        <span class="deep-orange--text font-weight-bold">
+          {{ item.stage.apCost }}
+        </span>
+      </template>
+      <template #item.percentage="{ item }">
+        {{ item.percentageText }}
+      </template>
+    </v-data-table>
+  </div>
 </template>
 
 <script>
@@ -35,10 +39,11 @@ import Table from '@/mixins/Table'
 import timeFormatter from '@/utils/timeFormatter'
 import StageCode from '@/components/StageCode'
 import ZoneName from '@/components/ZoneName'
+import MoreDataIndicator from '@/components/MoreDataIndicator'
 
 export default {
   name: 'DataTableItem',
-  components: { ZoneName, StageCode },
+  components: { MoreDataIndicator, ZoneName, StageCode },
   mixins: [Table],
   props: {
     options: {
@@ -67,7 +72,7 @@ export default {
           text: this.$t('table.headers.apCost'),
           align: 'start',
           value: 'stage.apCost',
-          width: '85px'
+          width: '90px'
         },
         ...this.statHeaders
       ]
