@@ -144,10 +144,11 @@ export default {
 .v-toolbar--collapsed .hidden-on-collapsed {
   position: relative;
   opacity: 0;
-  transform: translateX(-16px);
+  transform: translateX(-24px);
+  letter-spacing: -.1rem;
 }
 .v-toolbar--collapsed .hidden-on-collapsed--secondary {
-  transform: translateX(-24px) !important;
+  transform: translateX(-40px) !important;
 }
 .v-toolbar--collapsed .d-none-on-collapsed {
   display: none;

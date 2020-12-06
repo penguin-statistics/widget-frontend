@@ -5,8 +5,9 @@
     style="z-index: 0"
   >
     <v-sheet
+      dark
       color="background"
-      class="d-flex flex-column align-center justify-center py-6 px-4 full-width error-border position-relative"
+      class="d-flex flex-column align-center justify-center py-6 px-4 full-width error-box position-relative"
       style="max-width: 600px"
       rounded
     >
@@ -14,7 +15,7 @@
         class="d-flex flex-column align-center justify-center"
         style="z-index: 1"
       >
-        <span class="grey--text caption">
+        <span class="grey--text text--darken-3 caption">
           {{ $t('errors._sorry') }}
         </span>
         <span class="subtitle-1">
@@ -29,7 +30,7 @@
           </v-icon>
           {{ $t('errors._reason', {error: errorMessage}) }}
         </span>
-        <span class="grey--text caption mt-0">
+        <span class="grey--text text--darken-3 caption mt-0">
           {{ $t('errors._reported') }}
         </span>
       </div>
