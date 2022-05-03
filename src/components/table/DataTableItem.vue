@@ -22,7 +22,10 @@
         <StageCode :code="item.stageCode" />
       </template>
       <template #item.stage.apCost="{ item }">
-        <span class="deep-orange--text font-weight-bold">
+        <span v-if="[NaN, null, undefined, 99].includes(item.stage.apCost)" style="opacity: 0.25">
+          --
+        </span>
+        <span v-else class="deep-orange--text font-weight-bold">
           {{ item.stage.apCost }}
         </span>
       </template>

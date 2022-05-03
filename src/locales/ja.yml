@@ -1,6 +1,13 @@
 app:
   vendor: ペンギン急便データ統計処理部門
 
+zone:
+  types:
+    MAINLINE: メインステージ
+    WEEKLY: 物資調達
+    ACTIVITY: イベント
+    GACHABOX: 補給物資
+
 settings:
   _name: 設定
   theme:

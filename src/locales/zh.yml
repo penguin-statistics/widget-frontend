@@ -42,6 +42,8 @@ zone:
     MAINLINE: 主线
     WEEKLY: 物资筹备
     ACTIVITY: 限时活动
+    ACTIVITY_PERMANENT: "插曲 & 别传"
+    GACHABOX: 物资补给箱
 
 table:
   scroll: 左右滑动查看数据

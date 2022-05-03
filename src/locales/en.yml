@@ -42,6 +42,8 @@ zone:
     MAINLINE: Mainline
     WEEKLY: Supplies
     ACTIVITY: Event
+    ACTIVITY_PERMANENT: "Intermezzi & Side Story"
+    GACHABOX: Gachabox
 
 table:
   scroll: Scroll to view details
