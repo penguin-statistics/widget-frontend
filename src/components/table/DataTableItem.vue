@@ -19,11 +19,11 @@
         <ZoneName :zone="item.zone" />
       </template>
       <template #item.stage="{ item }">
-        <StageCode :code="item.stageCode" />
+        <StageCode :code="item.stageCode" :small="invalidCost(item.stage.apCost)" />
       </template>
       <template #item.stage.apCost="{ item }">
-        <span v-if="[NaN, null, undefined, 99].includes(item.stage.apCost)" style="opacity: 0.25">
-          --
+        <span v-if="invalidCost(item.stage.apCost)" style="opacity: 0.25">
+          —
         </span>
         <span v-else class="deep-orange--text font-weight-bold">
           {{ item.stage.apCost }}
@@ -62,7 +62,7 @@ export default {
           align: 'end',
           sortable: false,
           value: 'zoneName',
-          width: '120px'
+          width: '150px'
         },
         {
           text: this.$t('table.headers.stage'),
@@ -87,6 +87,11 @@ export default {
           stageCode: strings.translate(el.stage, 'code'),
           timeRange: timeFormatter.startEnd(el.start, el.end)
         }))
+    }
+  },
+  methods: {
+    invalidCost (cost) {
+      return [NaN, null, undefined, 99].includes(cost)
     }
   }
 }

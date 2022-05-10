@@ -1,10 +1,11 @@
 <template>
-  <span>
+  <span :class="{'stage-code': true, 'small': small, 'x-small': small && !isEastAsianLang}">
     <span
       v-for="[index, c] in codes.entries()"
       :key="index"
       :class="generateStyle(c.s)"
-    >{{ c.t }}</span>
+      v-html="c.t"
+    />
   </span>
 </template>
 
@@ -26,10 +27,21 @@ export default {
     code: {
       type: String,
       required: true
+    },
+    small: {
+      type: Boolean,
+      default: false
     }
   },
   computed: {
     codes () {
+      if (this.code.indexOf(' ') !== -1) {
+        return [{
+          s: s.stage,
+          t: this.code
+        }]
+      }
+
       const segments = this.code.split('-')
       const results = []
       // format: []{s: (style), t: (text)}
@@ -37,7 +49,7 @@ export default {
       if (segments.length === 1) {
         results.push({
           s: s.stage,
-          t: segments[0]
+          t: segments[0].replace(/物资补给/g, '<br>物资补给')
         })
         return results
       }
@@ -94,6 +106,9 @@ export default {
         el.st = this.generateStyle(el.s)
         return el
       })
+    },
+    isEastAsianLang () {
+      return ['zh', 'ja', 'ko'].includes(this.$i18n.locale)
     }
   },
   methods: {
@@ -109,5 +124,14 @@ export default {
 </script>
 
 <style scoped>
-
+.stage-code {
+  display: inline-block;
+}
+.small {
+  font-size: small;
+}
+.x-small {
+  font-size: x-small;
+  line-height: 1.4;
+}
 </style>
