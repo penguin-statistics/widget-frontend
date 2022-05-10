@@ -62,14 +62,14 @@ export default {
           align: 'end',
           sortable: false,
           value: 'zoneName',
-          width: '90px'
+          width: '120px'
         },
         {
           text: this.$t('table.headers.stage'),
           align: 'start',
           sortable: false,
           value: 'stage',
-          width: '150px'
+          width: '120px'
         },
         {
           text: this.$t('table.headers.apCost'),
