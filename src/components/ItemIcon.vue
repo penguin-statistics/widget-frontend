@@ -59,8 +59,8 @@ export default {
       previousIconSize: 60,
       sprite: {
         iconSize: 183 / 2,
-        dimensions: [1098 / 2, 2562 / 2],
-        url: '/sprite/sprite.202011011235.small.png'
+        dimensions: [1098 / 2, 2928 / 2],
+        url: '/sprite/sprite.202109171627.small.png'
       }
     }
   },
