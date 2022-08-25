@@ -38,11 +38,11 @@
 </template>
 
 <script>
-import strings from '@/utils/strings'
-import Table from '@/mixins/Table'
 import ItemIcon from '@/components/ItemIcon'
-import timeFormatter from '@/utils/timeFormatter'
 import MoreDataIndicator from '@/components/MoreDataIndicator'
+import Table from '@/mixins/Table'
+import strings from '@/utils/strings'
+import timeFormatter from '@/utils/timeFormatter'
 
 export default {
   name: 'DataTableStage',
@@ -64,7 +64,9 @@ export default {
           value: 'item',
           width: '250px'
         },
-        ...this.statHeaders
+        ...this.statHeaders.filter((el) => {
+          return el.value !== 'apPPR'
+        })
       ]
     },
     items () {

@@ -37,12 +37,12 @@
 </template>
 
 <script>
-import strings from '@/utils/strings'
-import Table from '@/mixins/Table'
-import timeFormatter from '@/utils/timeFormatter'
+import MoreDataIndicator from '@/components/MoreDataIndicator'
 import StageCode from '@/components/StageCode'
 import ZoneName from '@/components/ZoneName'
-import MoreDataIndicator from '@/components/MoreDataIndicator'
+import Table from '@/mixins/Table'
+import strings from '@/utils/strings'
+import timeFormatter from '@/utils/timeFormatter'
 
 export default {
   name: 'DataTableItem',
