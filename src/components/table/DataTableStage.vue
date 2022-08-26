@@ -65,7 +65,8 @@ export default {
           width: '250px'
         },
         ...this.statHeaders.filter((el) => {
-          return el.value !== 'apPPR'
+          if (this.options.stages.every((stage) => stage.stageId === 'recruit')) return el.value !== 'apPPR'
+          return true
         })
       ]
     },
