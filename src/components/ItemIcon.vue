@@ -27,8 +27,8 @@
 </template>
 
 <script>
-import { mdiLamp, mdiTreasureChest } from '@mdi/js'
 import CDN from '@/mixins/CDN'
+import { mdiLamp, mdiTreasureChest } from '@mdi/js'
 
 export default {
   name: 'ItemIcon',
@@ -59,8 +59,8 @@ export default {
       previousIconSize: 60,
       sprite: {
         iconSize: 183 / 2,
-        dimensions: [1098 / 2, 2928 / 2],
-        url: '/sprite/sprite.202109171627.small.png'
+        dimensions: [1098 / 2, 3111 / 2],
+        url: '/sprite/sprite.202210111514.small.png'
       }
     }
   },
